@@ -28,6 +28,7 @@ post '/' do
                 if message["user"] == user_id
                   str += 'line 29'
                   HTTParty.get(DELETE_URL + message["ts"] + '&channel=' + channel_id)
+                  count += 1
                 end
                 break if count == 5
             end
