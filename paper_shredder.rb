@@ -4,8 +4,10 @@ require 'sinatra/reloader'
 require 'json'
 require 'httparty'
 
-URL = "https://slack.com/api/im.history?token=#{key}&channel=".freeze
-DELETE_URL = "https://slack.com/api/chat.delete?token=#{key}&ts=".freeze
+
+
+URL = "https://slack.com/api/im.history?token=#{ENV['SLACK_API_KEY']}&channel=".freeze
+DELETE_URL = "https://slack.com/api/chat.delete?token=#{ENV['SLACK_API_KEY']}&ts=".freeze
 get '/' do
 end
 
