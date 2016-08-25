@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Paper Shredder</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+            padding: 2% 10%;
+            line-height: 2em;
+        }
+        h2 {
+          margin-top: 2em;
+        }
+        a {
+            position: relative;
+            color: #000;
+            text-decoration: none !important;
+            padding-bottom: 2px;
+        }
+
+        a:after {
+            background-color: #222;
+            bottom: 0;
+            content: '';
+            height: 1px;
+            left: 0;
+            position: absolute;
+            right: 0;
+            transition: right 0.2s ease, left 0.2s ease;
+        }
+
+        a:hover:after {
+            left: 50%;
+            right: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1></a>Paper Shredder</h1>
+    <p>Paper Shredder is a Slack integration that helps keep your private messages private.</p>
+    <h2>Set Up</h2>
+    <p>At the moment, Paper shredder is only an unofficial slash command integration, not an official Slack app. Until it is, you have a couple option.</p>
+    <ol>
+        <li>
+            <p>Get in touch with the creator, Ryan Novas, via his <a href="http://ryannovas.com/">website</a>. He’ll hook you up with Paper Shredder.</p>
+        </li>
+        <li>
+            <p>Fork this <a href="https://github.com/RyanNovas/paper_shredder">GitHub Repo</a>, host the app where ever you want, and set an environmental variable <code>SLACK_API_KEY=your_api_key</code>. Finally, set up a <a href="https://api.slack.com/slash-commands">slash command</a> that sends a <code>POST</code>                request to the app.</p>
+        </li>
+    </ol>
+    <h2>Usage</h2>
+    <p>Once the slash command has been set up access Paper Shredder by typing <code>/paper_shredder last number_of_messages_you_want_to_delete</code> to delete messages, or <code>/paper_shredder help</code> to learn more.</p>
+    <p>This will only work in DM’s, and there is an upper limit of 100 messages(imposed by the Slack API). There will be more features coming soon.</p>
+</body>
+
+</html>

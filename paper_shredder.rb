@@ -24,6 +24,7 @@ def delete_last_number(num_to_delete, params)
     end
 end
 
+
 post '/' do
     text = params.fetch('text').strip.split(' ')
     num_to_delete = text[1].to_i
@@ -43,4 +44,8 @@ post '/' do
         message = 'That is an invalid command. Type /paper_shredder help to learn more.'
     end
     message
+end
+
+get '/*' do
+  send_file 'index.html'
 end
